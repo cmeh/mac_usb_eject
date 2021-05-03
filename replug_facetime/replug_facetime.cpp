@@ -113,7 +113,7 @@ static UINT get_facetime()
 		IoRegistryGetProperty( usbDevice, CFSTR("USB Product Name"), sFriendlyName);
 		UINT location = GetUsbLocation(usbDevice);
 		IOObjectRelease(usbDevice);
-		if (NULL != strstr(sFriendlyName, "FaceTime")) {
+		if (NULL != strstr(sFriendlyName, "FaceTime") || NULL != strstr(sFriendlyName, "Built-in iSight")) {
 			rv = location;
 			break;
 		}
